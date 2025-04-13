@@ -28,6 +28,7 @@ Route::prefix('api')->middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/user/update', [AuthController::class, 'updateProfile']);
     Route::apiResource('tasks', TaskController::class);
+    Route::put('/tasks/{task}', [TaskController::class, 'update']);
     Route::get('tasks/{task}/download', [TaskController::class, 'download']);
 });
 
